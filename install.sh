@@ -8,11 +8,11 @@
 #I. Install all Pre-requisites
 
 #PHP
-dnf install php php-mysqlnd
+dnf install php php-mysqlnd -y
 #MariaDB
-dnf install mariadb-server
+dnf install mariadb-server -y
 #Apache
-dnf install httpd
+dnf install httpd -y
 
 #II. Open HTTP and HTTPS port 80 and 443 on firewall.
 
@@ -51,7 +51,7 @@ ip link set virbr0 down
 
 #VII. Install Webmin for Remote Management
 
-Go to OPT directory
+#Go to OPT directory
 # cd /opt
 # wget http://www.webmin.com/jcameron-key.asc
 # wget http://www.webmin.com/download/rpm/webmin-current.rpm
@@ -60,5 +60,10 @@ Go to OPT directory
 # rpm --import jcameron-key.asc
 # rpm -Uvh webmin-current.rpm
 
-VIII. Set Hostname
-# hostnamectl set-hostname "CentOS8"
+#VIII. Set Hostname
+hostnamectl set-hostname "CentOS8"
+
+dnf update -y
+
+
+
